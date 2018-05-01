@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="600dp">
+
+    <TextView
+        android:id="@+id/txtTenTinhNguyen"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:hint="Tên Hoạt Động Tình Nguyện"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="18sp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:id="@+id/txtNgayKT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Ngày Kết Thúc"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/txtNgayBD"
+        android:layout_alignStart="@+id/txtNgayBD" />
+
+    <TextView
+        android:id="@+id/txtNgayBD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Ngày Bắt Đầu"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/txtTenTinhNguyen"
+        android:layout_alignStart="@+id/txtTenTinhNguyen" />
+
+    <TextView
+        android:id="@+id/txtSLConLai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Số Lượng Còn Lại"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/txtSLThamGia"
+        android:layout_alignStart="@+id/txtSLThamGia" />
+
+    <TextView
+        android:id="@+id/txtSLThamGia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Số Lường Sinh Viên Tham Gia"
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/txtNgayKT"
+        android:layout_alignStart="@+id/txtNgayKT" />
+
+    <ImageButton
+        android:id="@+id/btnDangKyNhanh"
+        android:background="@drawable/drawoimagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/electricity"
+        android:layout_marginEnd="12dp"
+        android:layout_below="@+id/txtTenTruongDaiHoc"
+        android:layout_toStartOf="@+id/btnChiTiet"
+        android:layout_marginTop="5dp" />
+
+    <ImageButton
+        android:id="@+id/btnChiTiet"
+        android:background="@drawable/drawoimagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/question"
+        android:layout_alignTop="@+id/btnDangKyNhanh"
+        android:layout_toEndOf="@+id/txtSLThamGia" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="600dp"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnDanhSachSinhVienTham"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/holo_red_dark" />
+
+    <TextView
+        android:id="@+id/txtTenTruongDaiHoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtSLConLai"
+        android:layout_below="@+id/txtSLConLai"
+        android:hint="Mã Trường"
+        android:textColor="@android:color/background_dark" />
+
+    <ImageButton
+        android:id="@+id/btnDanhSachSinhVienTham"
+        android:background="@drawable/drawoimagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/teamwork"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/btnDangKyNhanh"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
