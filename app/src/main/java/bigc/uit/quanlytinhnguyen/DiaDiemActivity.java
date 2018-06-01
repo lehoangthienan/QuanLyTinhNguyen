@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,7 +49,6 @@ import bigc.uit.quanlytinhnguyen.bigc.hoatdongtinhnguyen.model.TinhNguyen1;
 public class DiaDiemActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    Spinner spinnerType;
     ArrayList<String> dsType;
     ArrayAdapter<String> adapterType;
     String MATN, kinhDo, viDo;
@@ -56,6 +56,7 @@ public class DiaDiemActivity extends AppCompatActivity implements OnMapReadyCall
     float kd, vd;
     ProgressDialog progressDialog;
     DiaDiem diadiem = new DiaDiem();
+    ImageButton btnThoiTiet ;
 
     GoogleMap.OnMyLocationChangeListener listener = new GoogleMap.OnMyLocationChangeListener() {
         @Override
@@ -87,17 +88,18 @@ public class DiaDiemActivity extends AppCompatActivity implements OnMapReadyCall
     }
 
     private void addEvents() {
-        spinnerType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        btnThoiTiet.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//                xuLyDoiCheDoHienThi(i);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
+            public void onClick(View view) {
+                xulyWeather();
             }
         });
+    }
+
+    private void xulyWeather() {
+        Intent i = new Intent(DiaDiemActivity.this, WeatherActivity.class);
+        i.putExtra("MATN" , MATN);
+        this.startActivity(i);
     }
 
 //    private void xuLyDoiCheDoHienThi(int i) {
@@ -135,16 +137,8 @@ public class DiaDiemActivity extends AppCompatActivity implements OnMapReadyCall
 
         txtKinhDo = (TextView) findViewById(R.id.txtKinhDo);
         txtViDo = (TextView) findViewById(R.id.txtViDo);
+        btnThoiTiet = (ImageButton) findViewById(R.id.btnXemThoiTiet);
 
-        spinnerType = (Spinner) findViewById(R.id.spinner);
-        dsType = new ArrayList<>();
-        dsType.addAll(Arrays.asList(getResources().getStringArray(R.array.arrType)));
-        adapterType = new ArrayAdapter<String>(
-                DiaDiemActivity.this,
-                android.R.layout.simple_spinner_item
-                );
-        adapterType.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerType.setAdapter(adapterType);
 
         Intent intent = getIntent();
         MATN = intent.getStringExtra("MATN");

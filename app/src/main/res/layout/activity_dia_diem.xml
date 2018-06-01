@@ -10,10 +10,14 @@
     android:background="@drawable/anhnen3"
     tools:context="bigc.uit.quanlytinhnguyen.DiaDiemActivity">
 
-    <Spinner
-        android:id="@+id/spinner"
+    <ImageButton
+        android:id="@+id/btnXemThoiTiet"
+        android:background="@drawable/drawbuttonweather"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
-        android:layout_height="54dp" />
+        android:layout_height="wrap_content"
+        android:src="@drawable/weather" />
 
     <TextView
         android:id="@+id/txtKinhDo"
@@ -29,7 +33,7 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="381dp"
-        android:layout_height="532dp"
+        android:layout_height="530dp"
         />
 
 </LinearLayout>
